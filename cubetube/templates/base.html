@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}CubeTube{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
-    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
-    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static '/css/variables.css' %}">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static '/css/messages.css' %}">
+    <link rel="stylesheet" href="{% static '/css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/forms.css' %}">
 
     {% block extra_css %}{% endblock %}
 </head>
@@ -19,6 +19,7 @@
     <nav class="navbar">
         <a href="/" class="navbar-brand">
             <span class="brand-icon">▶</span>
+            CubeTube
         </a>
         <ul class="navbar-nav">
             {% if user.is_authenticated %}
@@ -31,8 +32,8 @@
                     </form>
                 </li>
             {% else %}
-                <li><a href ="{% url 'accounts:login' %}" class="nav-link">Sign In</a></li>
-                <li><a href ="{% url 'accounts:register' %}" class="nav-link  btn-primary">Sign Up</a></li>
+                <li><a href="{% url 'accounts:login' %}" class="nav-link">Sign In</a></li>
+                <li><a href="{% url 'accounts:register' %}" class="nav-link btn-primary">Sign Up</a></li>
             {% endif %}
         </ul>
     </nav>
