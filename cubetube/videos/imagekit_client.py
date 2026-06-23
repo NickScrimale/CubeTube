@@ -55,7 +55,7 @@ def upload_video(file_data: bytes, file_name: str, folder: str = "videos") -> di
         file=file_data,
         file_name=file_name,
         folder=folder,
-        public_key=public_key
+        public_key="public_key",
     )
 
     return {
@@ -89,7 +89,7 @@ def upload_thumbnail(file_data: bytes, file_name: str, folder: str = "thumbnails
     }
 
 
-def delete_video(file_id: str) -> bool:
-    client = get_imagekit_client()
-    client.files.delete(file_id=file_id)
-    return True
+# def delete_video(file_id: str) -> bool:
+#     client = get_imagekit_client()
+#     client.files.delete(file_id=file_id)
+#     return True
