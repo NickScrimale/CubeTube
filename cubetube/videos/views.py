@@ -49,7 +49,7 @@ def video_upload(request):
                 "message": "Video uploaded successfully"
             })
         except Exception as e:
-            return JsonResponse({"success": False, "error": str()})
+            return JsonResponse({"success": False, "errors": str(e)})
     
     errors = []
     for field, field_errors in forms.errors.items():
